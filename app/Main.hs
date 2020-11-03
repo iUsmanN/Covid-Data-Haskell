@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import HTTP
 
 main :: IO ()
-main = someFunc
+main = do
+    let url = "https://opendata.ecdc.europa.eu/covid19/casedistribution/json/"
+    json <- download url
+    print json

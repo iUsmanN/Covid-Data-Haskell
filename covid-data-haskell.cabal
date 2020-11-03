@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ae34649c42ee110a729deb5f164c2e3dd30ec11eb4a1cef93265bebfa317323b
+-- hash: 805a6ff6e6ed7844e719268a637de88a8bde686a4151e0b6b820a891981245fe
 
 name:           covid-data-haskell
 version:        0.1.0.0
@@ -27,13 +27,16 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      HTTP
   other-modules:
       Paths_covid_data_haskell
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-conduit
   default-language: Haskell2010
 
 executable covid-data-haskell-exe
@@ -44,8 +47,11 @@ executable covid-data-haskell-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
     , covid-data-haskell
+    , http-conduit
   default-language: Haskell2010
 
 test-suite covid-data-haskell-test
@@ -57,6 +63,9 @@ test-suite covid-data-haskell-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
     , covid-data-haskell
+    , http-conduit
   default-language: Haskell2010
