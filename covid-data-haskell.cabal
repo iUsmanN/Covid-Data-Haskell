@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 805a6ff6e6ed7844e719268a637de88a8bde686a4151e0b6b820a891981245fe
+-- hash: 51197f2f40e0f1580f28560087908f2bdf370862c6f75efb85ae0e20fa4f932c
 
 name:           covid-data-haskell
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       HTTP
+      Parse
   other-modules:
       Paths_covid_data_haskell
   hs-source-dirs:
